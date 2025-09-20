@@ -46,7 +46,8 @@ export default function IssuesPage() {
     filters.label
       ? issue.labels.some((lbl) =>
           lbl.name.toLowerCase().includes(filters.label.toLowerCase())
-        )
+        ) ||
+        issue.user.login.toLowerCase().includes(filters.label.toLowerCase())
       : true
   );
 
